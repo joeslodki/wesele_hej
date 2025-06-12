@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Znajdź swoje miejsce</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    h1 {
+      margin-bottom: 1rem;
+    }
+    input {
+      padding: 0.5rem;
+      font-size: 1rem;
+      width: 300px;
+      margin-bottom: 1rem;
+    }
+    #result {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+    .image-wrapper {
+      margin-top: 2rem;
+      position: relative;
+    }
+    .chair {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: rgba(0, 0, 255, 0.2);
+      border: 1px solid #333;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .chair:hover::after {
+      content: attr(data-guest);
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: white;
+      padding: 4px 8px;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Znajdź swoje miejsce przy stole</h1>
+  <input type="text" id="search" placeholder="Wpisz imię i nazwisko..." />
+  <div id="result"></div>
+
+  <div class="image-wrapper">
+    <img src="stoły.png" alt="Układ stołów" />
+    <!-- Przykładowe krzesła -->
+    <div class="chair" style="top: 250px; left: 250px;" data-guest="Anna Kowalska"></div>
+    <div class="chair" style="top: 250px; left: 725px;" data-guest="Piotr Nowak"></div>
+    <div class="chair" style="top: 485px; left: 250px;" data-guest="Katarzyna Wiśniewska"></div>
+    <div class="chair" style="top: 485px; left: 725px;" data-guest="Tomasz Wójcik"></div>
+    <div class="chair" style="top: 720px; left: 250px;" data-guest="Joanna Zielińska"></div>
+    <div class="chair" style="top: 720px; left: 725px;" data-guest="Marcin Szymański"></div>
+  </div>
+
+  <script>
+    const guests = [
+      { imie: "Anna", nazwisko: "Kowalska", stol: 1, miejsce: 1 },
+      { imie: "Piotr", nazwisko: "Nowak", stol: 1, miejsce: 2 },
+      { imie: "Katarzyna", nazwisko: "Wiśniewska", stol: 2, miejsce: 1 },
+      { imie: "Tomasz", nazwisko: "Wójcik", stol: 2, miejsce: 2 },
+      { imie: "Joanna", nazwisko: "Zielińska", stol: 3, miejsce: 1 },
+      { imie: "Marcin", nazwisko: "Szymański", stol: 3, miejsce: 2 }
+    ];
+
+    const input = document.getElementById('search');
+    const resultDiv = document.getElementById('result');
+
+    input.addEventListener('input', () => {
+      const query = input.value.toLowerCase();
+      const guest = guests.find(g => `${g.imie} ${g.nazwisko}`.toLowerCase() === query);
+
+      if (guest) {
+        resultDiv.textContent = `Twoje miejsce: Stół ${guest.stol}, Miejsce ${guest.miejsce}`;
+      } else {
+        resultDiv.textContent = query.length > 0 ? 'Nie znaleziono takiego gościa.' : '';
+      }
+    });
+  </script>
+</body>
+</html>
