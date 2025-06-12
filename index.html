@@ -30,6 +30,8 @@
     .image-wrapper {
       margin-top: 2rem;
       position: relative;
+      width: 100%;
+      max-width: 800px;
     }
     .chair {
       position: absolute;
@@ -53,10 +55,18 @@
       border-radius: 4px;
       white-space: nowrap;
     }
-    img {
+    .image-wrapper img {
       max-width: 100%;
       height: auto;
       border: 1px solid #ccc;
+      pointer-events: none;
+    }
+    #show-button {
+      margin-top: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      font-size: 1rem;
+      cursor: pointer;
+      display: none;
     }
   </style>
 </head>
@@ -64,39 +74,60 @@
   <h1>Znajdź swoje miejsce przy stole</h1>
   <input type="text" id="search" placeholder="Wpisz imię i nazwisko..." />
   <div id="result"></div>
+  <button id="show-button">Pokaż miejsce</button>
 
   <div class="image-wrapper">
     <img src="stoły.png" alt="Układ stołów" />
-    <!-- Przykładowe krzesła -->
-    <div class="chair" style="top: 250px; left: 250px;" data-guest="Anna Kowalska"></div>
-    <div class="chair" style="top: 250px; left: 725px;" data-guest="Piotr Nowak"></div>
-    <div class="chair" style="top: 485px; left: 250px;" data-guest="Katarzyna Wiśniewska"></div>
-    <div class="chair" style="top: 485px; left: 725px;" data-guest="Tomasz Wójcik"></div>
-    <div class="chair" style="top: 720px; left: 250px;" data-guest="Joanna Zielińska"></div>
-    <div class="chair" style="top: 720px; left: 725px;" data-guest="Marcin Szymański"></div>
+    <!-- Przykładowe krzesła ustawione procentowo -->
+    <div class="chair" style="top: 1.6%; left: 24.5%;" data-guest="Anna Kowalska" data-table="1" data-seat="1"></div>
+    <div class="chair" style="top: 1.6%; left: 74.5%;" data-guest="Piotr Nowak" data-table="1" data-seat="2"></div>
+    <div class="chair" style="top: 3.1%; left: 24.5%;" data-guest="Katarzyna Wiśniewska" data-table="1" data-seat="3"></div>
+    <div class="chair" style="top: 3.1%; left: 74.5%;" data-guest="Tomasz Wójcik" data-table="1" data-seat="4"></div>
+    <div class="chair" style="top: 4.6%; left: 24.5%;" data-guest="Joanna Zielińska" data-table="1" data-seat="5"></div>
+    <div class="chair" style="top: 4.6%; left: 74.5%;" data-guest="Marcin Szymański" data-table="1" data-seat="6"></div>
+	<!--stół 2-->
+	<div class="chair" style="top: 6.6%; left: 24.5%;" data-guest="Bazylia" data-table="2" data-seat="1"></div>
+    <div class="chair" style="top: 6.6%; left: 74.5%;" data-guest="buraczek" data-table="2" data-seat="2"></div>
+    <div class="chair" style="top: 8.1%; left: 24.5%;" data-guest="Krowa" data-table="2" data-seat="3"></div>
+    <div class="chair" style="top: 8.1%; left: 74.5%;" data-guest="Mateusz Wójcik" data-table="2" data-seat="4"></div>
+    <div class="chair" style="top: 9.6%; left: 24.5%;" data-guest="kiełbasa" data-table="2" data-seat="5"></div>
+    <div class="chair" style="top: 9.6%; left: 74.5%;" data-guest="Mateusz Ziemniak" data-table="2" data-seat="6"></div>
   </div>
 
   <script>
-    const guests = [
-      { imie: "Anna", nazwisko: "Kowalska", stol: 1, miejsce: 1 },
-      { imie: "Piotr", nazwisko: "Nowak", stol: 1, miejsce: 2 },
-      { imie: "Katarzyna", nazwisko: "Wiśniewska", stol: 2, miejsce: 1 },
-      { imie: "Tomasz", nazwisko: "Wójcik", stol: 2, miejsce: 2 },
-      { imie: "Joanna", nazwisko: "Zielińska", stol: 3, miejsce: 1 },
-      { imie: "Marcin", nazwisko: "Szymański", stol: 3, miejsce: 2 }
-    ];
-
     const input = document.getElementById('search');
     const resultDiv = document.getElementById('result');
+    const showButton = document.getElementById('show-button');
+    const chairs = document.querySelectorAll('.chair');
+    let matchedChair = null;
 
     input.addEventListener('input', () => {
       const query = input.value.toLowerCase();
-      const guest = guests.find(g => `${g.imie} ${g.nazwisko}`.toLowerCase() === query);
+      let found = false;
+      matchedChair = null;
 
-      if (guest) {
-        resultDiv.textContent = `Twoje miejsce: Stół ${guest.stol}, Miejsce ${guest.miejsce}`;
-      } else {
+      chairs.forEach(chair => {
+        chair.style.backgroundColor = 'rgba(0, 0, 255, 0.2)';
+
+        const guestName = chair.dataset.guest.toLowerCase();
+        if (guestName === query) {
+          chair.style.backgroundColor = 'rgba(0, 200, 0, 0.5)';
+          resultDiv.textContent = `Znaleziono: ${chair.dataset.guest} (Stół ${chair.dataset.table}, Miejsce ${chair.dataset.seat})`;
+          matchedChair = chair;
+          found = true;
+          showButton.style.display = 'inline-block';
+        }
+      });
+
+      if (!found) {
         resultDiv.textContent = query.length > 0 ? 'Nie znaleziono takiego gościa.' : '';
+        showButton.style.display = 'none';
+      }
+    });
+
+    showButton.addEventListener('click', () => {
+      if (matchedChair) {
+        matchedChair.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     });
   </script>
