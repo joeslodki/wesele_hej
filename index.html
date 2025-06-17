@@ -46,26 +46,22 @@
       border: 1px solid #ccc;
       position: relative;
       z-index: 0;
-      display: block;
     }
     .chair {
       position: absolute;
-      width: 30px;
-      height: 30px;
-      background-color: rgba(0, 0, 255, 0.4);
+      width: 20px;
+      height: 20px;
+      background-color: rgba(0, 0, 255, 0.2);
       border: 1px solid #333;
       border-radius: 50%;
       cursor: pointer;
-      z-index: 2;
+      z-index: 1;
       touch-action: manipulation;
-      pointer-events: auto;
-      -webkit-tap-highlight-color: transparent;
-      -webkit-touch-callout: none;
     }
     .chair:hover::after {
       content: attr(data-guest);
       position: absolute;
-      top: -35px;
+      top: -30px;
       left: 50%;
       transform: translateX(-50%);
       background: #333;
@@ -85,14 +81,183 @@
 
   <div class="image-wrapper">
     <img src="stoły3.png" alt="Układ stołów" />
+    
+	<!-- stół 1 -->
+    <div class="chair" style="top: 4.48%; left: 25.9%;" data-guest="Katarzyna Cholewa" data-table="1" data-seat="1"></div>
+    <div class="chair" style="top: 4.48%; left: 76.68%;" data-guest="Sylwia Kuboń" data-table="1" data-seat="2"></div>
+    <div class="chair" style="top: 5.84%; left: 25.9%;" data-guest="Zbigniew Cholewa" data-table="1" data-seat="3"></div>
+    <div class="chair" style="top: 5.84%; left: 76.68%;" data-guest="Janusz Kuboń" data-table="1" data-seat="4"></div>
+    <div class="chair" style="top: 7.2%; left: 25.9%;" data-guest="Maciej Cholewa" data-table="1" data-seat="5"></div>
+    <div class="chair" style="top: 7.2%; left: 76.68%;" data-guest="Bartłomiej Kuboń" data-table="1" data-seat="6"></div>
+	<!--stół 2-->
+	<div class="chair" style="top: 8.85%; left: 25.9%;" data-guest="Patrycja Nowak" data-table="2" data-seat="1"></div>
+    <div class="chair" style="top: 8.85%; left: 76.68%;" data-guest="Bożena Konar" data-table="2" data-seat="2"></div>
+    <div class="chair" style="top: 10.15%; left: 25.9%;" data-guest="Karolina Cholewa" data-table="2" data-seat="3"></div>
+    <div class="chair" style="top: 10.15%; left: 76.68%;" data-guest="Władysław Wzorek" data-table="2" data-seat="4"></div>
+    <div class="chair" style="top: 11.5%; left: 25.9%;" data-guest="Teresa Cholewa" data-table="2" data-seat="5"></div>
+    <div class="chair" style="top: 11.5%; left: 76.68%;" data-guest="Janina Wzorek" data-table="2" data-seat="6"></div>
 
-    <!-- Stół 1 - przy każdym krążku dodany tabindex -->
-    <div class="chair" tabindex="0" style="top: 4.48%; left: 25.9%;" data-guest="Katarzyna Cholewa" data-table="1" data-seat="1"></div>
-    <div class="chair" tabindex="0" style="top: 4.48%; left: 76.68%;" data-guest="Sylwia Kuboń" data-table="1" data-seat="2"></div>
-    <div class="chair" tabindex="0" style="top: 5.84%; left: 25.9%;" data-guest="Zbigniew Cholewa" data-table="1" data-seat="3"></div>
-    <div class="chair" tabindex="0" style="top: 5.84%; left: 76.68%;" data-guest="Janusz Kuboń" data-table="1" data-seat="4"></div>
-    <div class="chair" tabindex="0" style="top: 7.2%; left: 25.9%;" data-guest="Maciej Cholewa" data-table="1" data-seat="5"></div>
-    <div class="chair" tabindex="0" style="top: 7.2%; left: 76.68%;" data-guest="Bartłomiej Kuboń" data-table="1" data-seat="6"></div>
+	<!-- stół 3 -->
+	<div class="chair" style="top: 13.2%; left: 25.9%;" data-guest="ks. Piotr" data-table="3" data-seat="1"></div>
+	<div class="chair" style="top: 13.2%; left: 76.68%;" data-guest="Wanda Piska" data-table="3" data-seat="2"></div>
+	<div class="chair" style="top: 14.5%; left: 25.9%;" data-guest="Zofia Czajkowicz" data-table="3" data-seat="3"></div>
+	<div class="chair" style="top: 14.5%; left: 76.68%;" data-guest="Marcin Wzorek" data-table="3" data-seat="4"></div>
+	<div class="chair" style="top: 15.9%; left: 25.9%;" data-guest="Małgorzata Maczuga" data-table="3" data-seat="5"></div>
+	<div class="chair" style="top: 15.9%; left: 76.68%;" data-guest="Katarzyna Kożuchowska" data-table="3" data-seat="6"></div>
+
+	<!-- stół 4 -->
+	<div class="chair" style="top: 17.65%; left: 25.9%;" data-guest="Marek Maczuga" data-table="4" data-seat="1"></div>
+	<div class="chair" style="top: 17.65%; left: 76.68%;" data-guest="Artur Wzorek" data-table="4" data-seat="2"></div>
+	<div class="chair" style="top: 19.0%; left: 25.9%;" data-guest="Paweł Maczuga" data-table="4" data-seat="3"></div>
+	<div class="chair" style="top: 19.0%; left: 76.68%;" data-guest="Monika Wzorek" data-table="4" data-seat="4"></div>
+	<div class="chair" style="top: 20.3%; left: 25.9%;" data-guest="Os. tow. Paweł" data-table="4" data-seat="5"></div>
+	<div class="chair" style="top: 20.3%; left: 76.68%;" data-guest="Natalia Wzorek " data-table="4" data-seat="6"></div>
+
+	<!-- stół 5 -->
+	<div class="chair" style="top: 22.0%; left: 25.9%;" data-guest="Michał Maczuga" data-table="5" data-seat="1"></div>
+	<div class="chair" style="top: 22.0%; left: 76.68%;" data-guest="Edyta Kozłowska" data-table="5" data-seat="2"></div>
+	<div class="chair" style="top: 23.35%; left: 25.9%;" data-guest="Os. Tow. Michał" data-table="5" data-seat="3"></div>
+	<div class="chair" style="top: 23.35%; left: 76.68%;" data-guest="Alina Kozłowska" data-table="5" data-seat="4"></div>
+	<div class="chair" style="top: 24.6%; left: 25.9%;" data-guest="Marek Cholewa" data-table="5" data-seat="5"></div>
+	<div class="chair" style="top: 24.6%; left: 76.68%;" data-guest="Milena Kozłowska" data-table="5" data-seat="6"></div>
+
+	<!-- stół 6 -->
+	<div class="chair" style="top: 26.4%; left: 25.9%;" data-guest="Aneta Cholewa" data-table="6" data-seat="1"></div>
+	<div class="chair" style="top: 26.4%; left: 76.68%;" data-guest="Daniel Kozłowski" data-table="6" data-seat="2"></div>
+	<div class="chair" style="top: 27.7%; left: 25.9%;" data-guest="Marcel Cholewa" data-table="6" data-seat="3"></div>
+	<div class="chair" style="top: 27.7%; left: 76.68%;" data-guest="Joanna Polek" data-table="6" data-seat="4"></div>
+	<div class="chair" style="top: 29.0%; left: 25.9%;" data-guest="Maurycy Cholewa" data-table="6" data-seat="5"></div>
+	<div class="chair" style="top: 29.0%; left: 76.68%;" data-guest="Mateusz Polek " data-table="6" data-seat="6"></div>
+
+	<!-- stół 7 -->
+	<div class="chair" style="top: 30.7%; left: 25.9%;" data-guest="Jan Cholewa" data-table="7" data-seat="1"></div>
+	<div class="chair" style="top: 30.7%; left: 76.68%;" data-guest="Michał Polek" data-table="7" data-seat="2"></div>
+	<div class="chair" style="top: 32.0%; left: 25.9%;" data-guest="Maria Cholewa" data-table="7" data-seat="3"></div>
+	<div class="chair" style="top: 32.0%; left: 76.68%;" data-guest="Eliza Polek" data-table="7" data-seat="4"></div>
+	<div class="chair" style="top: 33.3%; left: 25.9%;" data-guest="Marta Cholewa" data-table="7" data-seat="5"></div>
+	<div class="chair" style="top: 33.3%; left: 76.68%;" data-guest="Zdzisław Kuboń" data-table="7" data-seat="6"></div>
+
+	<!-- stół 8 -->
+	<div class="chair" style="top: 35.1%; left: 25.9%;" data-guest="Łukasz Gałuszka" data-table="8" data-seat="1"></div>
+	<div class="chair" style="top: 35.1%; left: 76.68%;" data-guest="Edyta Kuboń" data-table="8" data-seat="2"></div>
+	<div class="chair" style="top: 36.4%; left: 25.9%;" data-guest="Paweł Cholewa" data-table="8" data-seat="3"></div>
+	<div class="chair" style="top: 36.4%; left: 76.68%;" data-guest="Ilona Maziarz" data-table="8" data-seat="4"></div>
+	<div class="chair" style="top: 37.7%; left: 25.9%;" data-guest="Zuzanna Cholewa" data-table="8" data-seat="5"></div>
+	<div class="chair" style="top: 37.7%; left: 76.68%;" data-guest="Mirosław Maziarz" data-table="8" data-seat="6"></div>
+
+	<!-- stół 9 -->
+	<div class="chair" style="top: 39.5%; left: 25.9%;" data-guest="Martyna Cholewa" data-table="9" data-seat="1"></div>
+	<div class="chair" style="top: 39.5%; left: 76.68%;" data-guest="Monika Wróbel" data-table="9" data-seat="2"></div>
+	<div class="chair" style="top: 40.8%; left: 25.9%;" data-guest="Daniel Dybczak" data-table="9" data-seat="3"></div>
+	<div class="chair" style="top: 40.8%; left: 76.68%;" data-guest="Wiktoria Wróbel" data-table="9" data-seat="4"></div>
+	<div class="chair" style="top: 42.1%; left: 25.9%;" data-guest="Katarzyna Dybczak" data-table="9" data-seat="5"></div>
+	<div class="chair" style="top: 42.1%; left: 76.68%;" data-guest="Iga Wróbel" data-table="9" data-seat="6"></div>
+
+	<!-- stół 10 -->
+	<div class="chair" style="top: 43.9%; left: 25.9%;" data-guest="Milena Dybczak" data-table="10" data-seat="1"></div>
+	<div class="chair" style="top: 43.9%; left: 76.68%;" data-guest="Tomasz Wróbel" data-table="10" data-seat="2"></div>
+	<div class="chair" style="top: 45.2%; left: 25.9%;" data-guest="Jan Dybczak" data-table="10" data-seat="3"></div>
+	<div class="chair" style="top: 45.2%; left: 76.68%;" data-guest="Anna Latawska" data-table="10" data-seat="4"></div>
+	<div class="chair" style="top: 46.5%; left: 25.9%;" data-guest="Olga Latawska" data-table="10" data-seat="5"></div>
+	<div class="chair" style="top: 46.5%; left: 76.68%;" data-guest="Michał Gumulak" data-table="10" data-seat="6"></div>
+	
+	<!-- stół 11 -->
+	<div class="chair" style="top: 48.4%; left: 25.9%;" data-guest="Marcin Harbuz" data-table="11" data-seat="1"></div>
+	<div class="chair" style="top: 48.4%; left: 76.68%;" data-guest="Ewelina Latawska" data-table="11" data-seat="2"></div>
+	<div class="chair" style="top: 49.7%; left: 25.9%;" data-guest="Klaudia Latawska" data-table="11" data-seat="3"></div>
+	<div class="chair" style="top: 49.7%; left: 76.68%;" data-guest="Sławomir Marta" data-table="11" data-seat="4"></div>
+	<div class="chair" style="top: 51.0%; left: 25.9%;" data-guest="Radosław Latawski" data-table="11" data-seat="5"></div>
+	<div class="chair" style="top: 51.0%; left: 76.68%;" data-guest="Aleksandra Jacher" data-table="11" data-seat="6"></div>
+
+	<!-- stół 12 -->
+	<div class="chair" style="top: 52.8%; left: 25.9%;" data-guest="Patrycja Lasko" data-table="12" data-seat="1"></div>
+	<div class="chair" style="top: 52.8%; left: 76.68%;" data-guest="Arkadiusz Chodak" data-table="12" data-seat="2"></div>
+	<div class="chair" style="top: 54.1%; left: 25.9%;" data-guest="Patryk Grzywa" data-table="12" data-seat="3"></div>
+	<div class="chair" style="top: 54.1%; left: 76.68%;" data-guest="Justyna Łaskawska" data-table="12" data-seat="4"></div>
+	<div class="chair" style="top: 55.4%; left: 25.9%;" data-guest="Basia Kaczorowska" data-table="12" data-seat="5"></div>
+	<div class="chair" style="top: 55.4%; left: 76.68%;" data-guest="Adam Podoluch" data-table="12" data-seat="6"></div>
+
+	<!-- stół 13 -->
+	<div class="chair" style="top: 57.1%; left: 25.9%;" data-guest="Przmysław Grobecki" data-table="13" data-seat="1"></div>
+	<div class="chair" style="top: 57.1%; left: 76.68%;" data-guest="OS. Tow. Jan" data-table="13" data-seat="2"></div>
+	<div class="chair" style="top: 58.4%; left: 25.9%;" data-guest="Karolina Legutko" data-table="13" data-seat="3"></div>
+	<div class="chair" style="top: 58.4%; left: 76.68%;" data-guest="Jan Strzesak" data-table="13" data-seat="4"></div>
+	<div class="chair" style="top: 59.7%; left: 25.9%;" data-guest="Jakub Legutko" data-table="13" data-seat="5"></div>
+	<div class="chair" style="top: 59.7%; left: 76.68%;" data-guest="Os. Tow. Patryk M." data-table="13" data-seat="6"></div>
+
+	<!-- stół 14 -->
+	<div class="chair" style="top: 61.5%; left: 25.9%;" data-guest="Patrycja Rzeźnik" data-table="14" data-seat="1"></div>
+	<div class="chair" style="top: 61.5%; left: 76.68%;" data-guest="Patryk Małek" data-table="14" data-seat="2"></div>
+	<div class="chair" style="top: 62.8%; left: 25.9%;" data-guest="OS. Tow. Patrycja" data-table="14" data-seat="3"></div>
+	<div class="chair" style="top: 62.8%; left: 76.68%;" data-guest="Izabela Smida" data-table="14" data-seat="4"></div>
+	<div class="chair" style="top: 64.1%; left: 25.9%;" data-guest="Hubert Kozik" data-table="14" data-seat="5"></div>
+	<div class="chair" style="top: 64.1%; left: 76.68%;" data-guest="Oskar Felkner" data-table="14" data-seat="6"></div>
+
+	<!-- stół 15 -->
+	<div class="chair" style="top: 65.9%; left: 25.9%;" data-guest="Wiktoria Bilska" data-table="15" data-seat="1"></div>
+	<div class="chair" style="top: 65.9%; left: 76.68%;" data-guest="Daria Kawecka" data-table="15" data-seat="2"></div>
+	<div class="chair" style="top: 67.2%; left: 25.9%;" data-guest="Krzysztof Bujak" data-table="15" data-seat="3"></div>
+	<div class="chair" style="top: 67.2%; left: 76.68%;" data-guest="Jakub Zarzyczny" data-table="15" data-seat="4"></div>
+	<div class="chair" style="top: 68.5%; left: 25.9%;" data-guest="OS. Tow Krzysztof" data-table="15" data-seat="5"></div>
+	<div class="chair" style="top: 68.5%; left: 76.68%;" data-guest="Os. Tow. Justyna T." data-table="15" data-seat="6"></div>
+
+	<!-- stół 16 -->
+	<div class="chair" style="top: 70.3%; left: 25.9%;" data-guest="Mateusz Wójcik" data-table="16" data-seat="1"></div>
+	<div class="chair" style="top: 70.3%; left: 76.68%;" data-guest="Justyna Tutaj" data-table="16" data-seat="2"></div>
+	<div class="chair" style="top: 71.6%; left: 25.9%;" data-guest="OS. Tow. Mateusz" data-table="16" data-seat="3"></div>
+	<div class="chair" style="top: 71.6%; left: 76.68%;" data-guest="Eryk Bączek" data-table="16" data-seat="4"></div>
+	<div class="chair" style="top: 72.9%; left: 25.9%;" data-guest="Paweł Maciąg" data-table="16" data-seat="5"></div>
+	<div class="chair" style="top: 72.9%; left: 76.68%;" data-guest="OS.tow Eryk" data-table="16" data-seat="6"></div>
+
+	<!-- stół 17 -->
+	<div class="chair" style="top: 74.6%; left: 25.9%;" data-guest="Kasia Morawska" data-table="17" data-seat="1"></div>
+	<div class="chair" style="top: 74.6%; left: 76.68%;" data-guest="Jerzy Kuczaj" data-table="17" data-seat="2"></div>
+	<div class="chair" style="top: 75.9%; left: 25.9%;" data-guest="Igor Gawłoski" data-table="17" data-seat="3"></div>
+	<div class="chair" style="top: 75.9%; left: 76.68%;" data-guest="Os Tow. Jerzy" data-table="17" data-seat="4"></div>
+	<div class="chair" style="top: 77.2%; left: 25.9%;" data-guest="OS. tow Igor" data-table="17" data-seat="5"></div>
+	<div class="chair" style="top: 77.2%; left: 76.68%;" data-guest="Daniel Rams" data-table="17" data-seat="6"></div>
+
+	<!-- stół 18 -->
+	<div class="chair" style="top: 79.0%; left: 25.9%;" data-guest="Piotr Guzik" data-table="18" data-seat="1"></div>
+	<div class="chair" style="top: 79.0%; left: 76.68%;" data-guest="Sylwia Hasior-Rams" data-table="18" data-seat="2"></div>
+	<div class="chair" style="top: 80.3%; left: 25.9%;" data-guest="Jowita Wengierska" data-table="18" data-seat="3"></div>
+	<div class="chair" style="top: 80.3%; left: 76.68%;" data-guest="Krzysztof Grądalski" data-table="18" data-seat="4"></div>
+	<div class="chair" style="top: 81.6%; left: 25.9%;" data-guest="Jurek Kotowski" data-table="18" data-seat="5"></div>
+	<div class="chair" style="top: 81.6%; left: 76.68%;" data-guest="Justyna Nadbrzeżna" data-table="18" data-seat="6"></div>
+
+	<!-- stół 19 -->
+	<div class="chair" style="top: 83.4%; left: 25.9%;" data-guest="Paulina Sikora" data-table="19" data-seat="1"></div>
+	<div class="chair" style="top: 83.4%; left: 76.68%;" data-guest="Jakub Migała" data-table="19" data-seat="2"></div>
+	<div class="chair" style="top: 84.7%; left: 25.9%;" data-guest="OS. Tow. Maria" data-table="19" data-seat="3"></div>
+	<div class="chair" style="top: 84.7%; left: 76.68%;" data-guest="Magdalena Matzner" data-table="19" data-seat="4"></div>
+	<div class="chair" style="top: 86.0%; left: 25.9%;" data-guest="Maria Nowak" data-table="19" data-seat="5"></div>
+	<div class="chair" style="top: 86.0%; left: 76.68%;" data-guest="Piotr Gaiński" data-table="19" data-seat="6"></div>
+
+	<!-- stół 20 -->
+	<div class="chair" style="top: 87.7%; left: 25.9%;" data-guest="Bartosz Pawlik" data-table="20" data-seat="1"></div>
+	<div class="chair" style="top: 87.7%; left: 76.68%;" data-guest="Anna Gaińska" data-table="20" data-seat="2"></div>
+	<div class="chair" style="top: 89.0%; left: 25.9%;" data-guest="Katarzyna Chmura" data-table="20" data-seat="3"></div>
+	<div class="chair" style="top: 89.0%; left: 76.68%;" data-guest="Kamil Ochyra" data-table="20" data-seat="4"></div>
+	<div class="chair" style="top: 90.3%; left: 25.9%;" data-guest="Piotr Łukasiewicz" data-table="20" data-seat="5"></div>
+	<div class="chair" style="top: 90.3%; left: 76.68%;" data-guest="Aleksandra Galanty-Ochyra" data-table="20" data-seat="6"></div>
+
+	<!-- stół 21 -->
+	<div class="chair" style="top: 92.1%; left: 25.9%;" data-guest="Karolina Łukasiewicz" data-table="21" data-seat="1"></div>
+	<div class="chair" style="top: 92.1%; left: 76.68%;" data-guest="Olga Jabłońska" data-table="21" data-seat="2"></div>
+	<div class="chair" style="top: 93.4%; left: 25.9%;" data-guest="" data-table="21" data-seat="3"></div>
+	<div class="chair" style="top: 93.4%; left: 76.68%;" data-guest="Jakub Pisarek" data-table="21" data-seat="4"></div>
+	<div class="chair" style="top: 94.7%; left: 25.9%;" data-guest="" data-table="21" data-seat="5"></div>
+	<div class="chair" style="top: 94.7%; left: 76.68%;" data-guest="" data-table="21" data-seat="6"></div>
+
+	<!-- stół 22 -->
+	<div class="chair" style="top: 96.5%; left: 25.9%;" data-guest="" data-table="22" data-seat="1"></div>
+	<div class="chair" style="top: 96.5%; left: 76.68%;" data-guest="" data-table="22" data-seat="2"></div>
+	<div class="chair" style="top: 97.8%; left: 25.9%;" data-guest="" data-table="22" data-seat="3"></div>
+	<div class="chair" style="top: 97.8%; left: 76.68%;" data-guest="" data-table="22" data-seat="4"></div>
+	<div class="chair" style="top: 99.1%; left: 25.9%;" data-guest="" data-table="22" data-seat="5"></div>
+	<div class="chair" style="top: 99.1%; left: 76.68%;" data-guest="" data-table="22" data-seat="6"></div>
+
+
   </div>
 
   <script>
@@ -102,18 +267,17 @@
     const chairs = document.querySelectorAll('.chair');
     let matchedChair = null;
 
-    // Obsługa wpisywania imienia
     input.addEventListener('input', () => {
       const query = input.value.toLowerCase();
       let found = false;
       matchedChair = null;
 
       chairs.forEach(chair => {
-        chair.style.backgroundColor = 'rgba(0, 0, 255, 0.4)';
+        chair.style.backgroundColor = 'rgba(0, 0, 255, 0.2)';
         const guestName = chair.dataset.guest.toLowerCase();
 
         if (guestName === query) {
-          chair.style.backgroundColor = 'rgba(0, 200, 0, 0.7)';
+          chair.style.backgroundColor = 'rgba(0, 200, 0, 0.5)';
           resultDiv.textContent = `Znaleziono: ${chair.dataset.guest} (Stół ${chair.dataset.table}, Miejsce ${chair.dataset.seat})`;
           matchedChair = chair;
           found = true;
@@ -127,18 +291,10 @@
       }
     });
 
-    // Obsługa kliknięcia przycisku
     showButton.addEventListener('click', () => {
       if (matchedChair) {
         matchedChair.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
-    });
-
-    // Testowa obsługa kliknięcia w krążki
-    chairs.forEach(chair => {
-      chair.addEventListener('click', () => {
-        alert(`Kliknięto: ${chair.dataset.guest}`);
-      });
     });
   </script>
 </body>
