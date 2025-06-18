@@ -316,6 +316,7 @@
     const chairs = document.querySelectorAll('.chair');
     let matchedChair = null;
 
+    // Obsługa wpisywania imienia
     input.addEventListener('input', () => {
       const query = input.value.toLowerCase();
       let found = false;
@@ -340,10 +341,18 @@
       }
     });
 
+    // Obsługa kliknięcia przycisku
     showButton.addEventListener('click', () => {
       if (matchedChair) {
         matchedChair.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
+    });
+
+    // Testowa obsługa kliknięcia w krążki
+    chairs.forEach(chair => {
+      chair.addEventListener('click', () => {
+        //alert(`Kliknięto: ${chair.dataset.guest}`);
+      });
     });
   </script>
 </body>
