@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Znajdź swoje miejsce</title>
+  <!-- Czcionki z Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: sans-serif;
@@ -13,20 +15,60 @@
       align-items: center;
       padding: 2rem;
     }
+
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      color: #000000;
+      margin: 0;
+    }
+
+    .header h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.8rem;
+      color: #6495ED;
+      margin: 0.5rem 0;
+    }
+
+    .header h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      color: #000000;
+      margin: 0.5rem 0;
+    }
+
+    .subheader {
+      font-family: 'Playfair Display', cursive;
+      font-size: 2rem;
+      color: #6a994e;
+      margin-top: 0.5rem;
+    }
+
     h1 {
       margin-bottom: 1rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: #000000;
     }
+
     input {
       padding: 0.5rem;
       font-size: 1rem;
       width: 300px;
       margin-bottom: 1rem;
     }
+
     #result {
       font-size: 1.2rem;
       font-weight: bold;
       margin-top: 1rem;
     }
+
     #show-button {
       margin-top: 0.5rem;
       padding: 0.4rem 0.8rem;
@@ -34,12 +76,14 @@
       cursor: pointer;
       display: none;
     }
+
     .image-wrapper {
       margin-top: 2rem;
       position: relative;
       width: 100%;
       max-width: 800px;
     }
+
     .image-wrapper img {
       max-width: 100%;
       height: auto;
@@ -48,6 +92,7 @@
       z-index: 0;
       display: block;
     }
+
     .chair {
       position: absolute;
       width: 30px;
@@ -62,6 +107,7 @@
       -webkit-tap-highlight-color: transparent;
       -webkit-touch-callout: none;
     }
+
     .chair:hover::after {
       content: attr(data-guest);
       position: absolute;
@@ -78,6 +124,13 @@
   </style>
 </head>
 <body>
+
+  <div class="header">
+    <h2>Weronika i Piotr</h2>
+    <h3>27 Czerwca 2025</h3>
+    <h4>Miłej Zabawy!</h4>
+  </div>
+
   <h1>Znajdź swoje miejsce przy stole</h1>
   <input type="text" id="search" placeholder="Wpisz imię i nazwisko..." />
   <div id="result"></div>
@@ -192,67 +245,68 @@
 		<!-- stół 14 -->
 		<div class="chair" style="top: 61.5%; left: 24.5%;" data-guest="Patrycja Rzeźnik" data-table="14" data-seat="1"></div>
 		<div class="chair" style="top: 61.5%; left: 76.68%;" data-guest="Patryk Małek" data-table="14" data-seat="2"></div>
-		<div class="chair" style="top: 62.8%; left: 24.5%;" data-guest="OS. Tow. Patrycja" data-table="14" data-seat="3"></div>
+		<div class="chair" style="top: 62.8%; left: 24.5%;" data-guest="Jakub Cybul" data-table="14" data-seat="3"></div>
 		<div class="chair" style="top: 62.8%; left: 76.68%;" data-guest="Izabela Smida" data-table="14" data-seat="4"></div>
-		<div class="chair" style="top: 64.1%; left: 24.5%;" data-guest="Hubert Kozik" data-table="14" data-seat="5"></div>
+		<div class="chair" style="top: 64.1%; left: 24.5%;" data-guest="Jakub Koncewicz" data-table="14" data-seat="5"></div>
 		<div class="chair" style="top: 64.1%; left: 76.68%;" data-guest="Oskar Felkner" data-table="14" data-seat="6"></div>
 
 		<!-- stół 15 -->
-		<div class="chair" style="top: 65.9%; left: 24.5%;" data-guest="Wiktoria Bilska" data-table="15" data-seat="1"></div>
+		<div class="chair" style="top: 65.9%; left: 24.5%;" data-guest="Justyna Tutaj" data-table="15" data-seat="1"></div>
 		<div class="chair" style="top: 65.9%; left: 76.68%;" data-guest="Daria Kawecka" data-table="15" data-seat="2"></div>
 		<div class="chair" style="top: 67.2%; left: 24.5%;" data-guest="Krzysztof Bujak" data-table="15" data-seat="3"></div>
 		<div class="chair" style="top: 67.2%; left: 76.68%;" data-guest="Jakub Zarzyczny" data-table="15" data-seat="4"></div>
-		<div class="chair" style="top: 68.5%; left: 24.5%;" data-guest="OS. Tow Krzysztof" data-table="15" data-seat="5"></div>
-		<div class="chair" style="top: 68.5%; left: 76.68%;" data-guest="Os. Tow. Justyna T." data-table="15" data-seat="6"></div>
+		<div class="chair" style="top: 68.5%; left: 24.5%;" data-guest="Natalia Kępka" data-table="15" data-seat="5"></div>
+		<div class="chair" style="top: 68.5%; left: 76.68%;" data-guest="Wiktoria Bilska" data-table="15" data-seat="6"></div>
 
 		<!-- stół 16 -->
 		<div class="chair" style="top: 70.3%; left: 24.5%;" data-guest="Mateusz Wójcik" data-table="16" data-seat="1"></div>
-		<div class="chair" style="top: 70.3%; left: 76.68%;" data-guest="Justyna Tutaj" data-table="16" data-seat="2"></div>
-		<div class="chair" style="top: 71.6%; left: 24.5%;" data-guest="OS. Tow. Mateusz" data-table="16" data-seat="3"></div>
-		<div class="chair" style="top: 71.6%; left: 76.68%;" data-guest="Eryk Bączek" data-table="16" data-seat="4"></div>
-		<div class="chair" style="top: 72.9%; left: 24.5%;" data-guest="Paweł Maciąg" data-table="16" data-seat="5"></div>
-		<div class="chair" style="top: 72.9%; left: 76.68%;" data-guest="OS.tow Eryk" data-table="16" data-seat="6"></div>
+		<div class="chair" style="top: 70.3%; left: 76.68%;" data-guest="Hubert Kozik" data-table="16" data-seat="2"></div>
+		<div class="chair" style="top: 71.6%; left: 24.5%;" data-guest="Zuzanna Michalak" data-table="16" data-seat="3"></div>
+		<div class="chair" style="top: 71.6%; left: 76.68%;" data-guest="Zofia Niemirowska" data-table="16" data-seat="4"></div>
+		<div class="chair" style="top: 72.9%; left: 24.5%;" data-guest="Piotr Guzik" data-table="16" data-seat="5"></div>
+		<div class="chair" style="top: 72.9%; left: 76.68%;" data-guest="Eryk Bączek" data-table="16" data-seat="6"></div>
 
 		<!-- stół 17 -->
-		<div class="chair" style="top: 74.6%; left: 24.5%;" data-guest="Kasia Morawska" data-table="17" data-seat="1"></div>
-		<div class="chair" style="top: 74.6%; left: 76.68%;" data-guest="Jerzy Kuczaj" data-table="17" data-seat="2"></div>
+		<div class="chair" style="top: 74.6%; left: 24.5%;" data-guest="Jowita Wengierska" data-table="17" data-seat="1"></div>
+		<div class="chair" style="top: 74.6%; left: 76.68%;" data-guest="Julia Krzak" data-table="17" data-seat="2"></div>
 		<div class="chair" style="top: 75.9%; left: 24.5%;" data-guest="Igor Gawłoski" data-table="17" data-seat="3"></div>
-		<div class="chair" style="top: 75.9%; left: 76.68%;" data-guest="Os Tow. Jerzy" data-table="17" data-seat="4"></div>
-		<div class="chair" style="top: 77.2%; left: 24.5%;" data-guest="OS. tow Igor" data-table="17" data-seat="5"></div>
-		<div class="chair" style="top: 77.2%; left: 76.68%;" data-guest="Daniel Rams" data-table="17" data-seat="6"></div>
+		<div class="chair" style="top: 75.9%; left: 76.68%;" data-guest="Jerzy Kuczaj" data-table="17" data-seat="4"></div>
+		<div class="chair" style="top: 77.2%; left: 24.5%;" data-guest="Karolina Półtorak" data-table="17" data-seat="5"></div>
+		<div class="chair" style="top: 77.2%; left: 76.68%;" data-guest="Sylwia Hasior-Rams" data-table="17" data-seat="6"></div>
 
 		<!-- stół 18 -->
-		<div class="chair" style="top: 79.0%; left: 24.5%;" data-guest="Piotr Guzik" data-table="18" data-seat="1"></div>
-		<div class="chair" style="top: 79.0%; left: 76.68%;" data-guest="Sylwia Hasior-Rams" data-table="18" data-seat="2"></div>
-		<div class="chair" style="top: 80.3%; left: 24.5%;" data-guest="Jowita Wengierska" data-table="18" data-seat="3"></div>
-		<div class="chair" style="top: 80.3%; left: 76.68%;" data-guest="Krzysztof Grądalski" data-table="18" data-seat="4"></div>
+		<div class="chair" style="top: 79.0%; left: 24.5%;" data-guest="Paweł Maciąg" data-table="18" data-seat="1"></div>
+		<div class="chair" style="top: 79.0%; left: 76.68%;" data-guest="Daniel Rams" data-table="18" data-seat="2"></div>
+		<div class="chair" style="top: 80.3%; left: 24.5%;" data-guest="Katarzyna Morawska" data-table="18" data-seat="3"></div>
+		<div class="chair" style="top: 80.3%; left: 76.68%;" data-guest="Justyna Nadbrzeżna" data-table="18" data-seat="4"></div>
 		<div class="chair" style="top: 81.6%; left: 24.5%;" data-guest="Jurek Kotowski" data-table="18" data-seat="5"></div>
-		<div class="chair" style="top: 81.6%; left: 76.68%;" data-guest="Justyna Nadbrzeżna" data-table="18" data-seat="6"></div>
+		<div class="chair" style="top: 81.6%; left: 76.68%;" data-guest="Krzysztof Grądalski" data-table="18" data-seat="6"></div>
 
 		<!-- stół 19 -->
 		<div class="chair" style="top: 83.4%; left: 24.5%;" data-guest="Paulina Sikora" data-table="19" data-seat="1"></div>
-		<div class="chair" style="top: 83.4%; left: 76.68%;" data-guest="Jakub Migała" data-table="19" data-seat="2"></div>
-		<div class="chair" style="top: 84.7%; left: 24.5%;" data-guest="OS. Tow. Maria" data-table="19" data-seat="3"></div>
-		<div class="chair" style="top: 84.7%; left: 76.68%;" data-guest="Magdalena Matzner" data-table="19" data-seat="4"></div>
+		<div class="chair" style="top: 83.4%; left: 76.68%;" data-guest="Anna Gaińska" data-table="19" data-seat="2"></div>
+		<div class="chair" style="top: 84.7%; left: 24.5%;" data-guest="Osoba Towarzysząca" data-table="19" data-seat="3"></div>
+		<div class="chair" style="top: 84.7%; left: 76.68%;" data-guest="Piotr Gaiński" data-table="19" data-seat="4"></div>
 		<div class="chair" style="top: 86.0%; left: 24.5%;" data-guest="Maria Nowak" data-table="19" data-seat="5"></div>
-		<div class="chair" style="top: 86.0%; left: 76.68%;" data-guest="Piotr Gaiński" data-table="19" data-seat="6"></div>
+		<div class="chair" style="top: 86.0%; left: 76.68%;" data-guest="Magdalena Matzner" data-table="19" data-seat="6"></div>
 
 		<!-- stół 20 -->
 		<div class="chair" style="top: 87.7%; left: 24.5%;" data-guest="Bartosz Pawlik" data-table="20" data-seat="1"></div>
-		<div class="chair" style="top: 87.7%; left: 76.68%;" data-guest="Anna Gaińska" data-table="20" data-seat="2"></div>
+		<div class="chair" style="top: 87.7%; left: 76.68%;" data-guest="Jakub Migała" data-table="20" data-seat="2"></div>
 		<div class="chair" style="top: 89.0%; left: 24.5%;" data-guest="Katarzyna Chmura" data-table="20" data-seat="3"></div>
-		<div class="chair" style="top: 89.0%; left: 76.68%;" data-guest="Kamil Ochyra" data-table="20" data-seat="4"></div>
+		<div class="chair" style="top: 89.0%; left: 76.68%;" data-guest="Aleksandra Galanty-Ochyra" data-table="20" data-seat="4"></div>
 		<div class="chair" style="top: 90.3%; left: 24.5%;" data-guest="Piotr Łukasiewicz" data-table="20" data-seat="5"></div>
-		<div class="chair" style="top: 90.3%; left: 76.68%;" data-guest="Aleksandra Galanty-Ochyra" data-table="20" data-seat="6"></div>
+		<div class="chair" style="top: 90.3%; left: 76.68%;" data-guest="Kamil Ochyra" data-table="20" data-seat="6"></div>
 
 		<!-- stół 21 -->
 		<div class="chair" style="top: 92.1%; left: 24.5%;" data-guest="Karolina Łukasiewicz" data-table="21" data-seat="1"></div>
 		<div class="chair" style="top: 92.1%; left: 76.68%;" data-guest="Olga Jabłońska" data-table="21" data-seat="2"></div>
-		<div class="chair" style="top: 93.4%; left: 24.5%;" data-guest="" data-table="21" data-seat="3"></div>
+		<!--div class="chair" style="top: 93.4%; left: 24.5%;" data-guest="" data-table="21" data-seat="3"></div-->
 		<div class="chair" style="top: 93.4%; left: 76.68%;" data-guest="Jakub Pisarek" data-table="21" data-seat="4"></div>
-		<div class="chair" style="top: 94.7%; left: 24.5%;" data-guest="" data-table="21" data-seat="5"></div>
-		<div class="chair" style="top: 94.7%; left: 76.68%;" data-guest="" data-table="21" data-seat="6"></div>
+		<!--div class="chair" style="top: 94.7%; left: 24.5%;" data-guest="" data-table="21" data-seat="5"></div-->
+		<!--div class="chair" style="top: 94.7%; left: 76.68%;" data-guest="" data-table="21" data-seat="6"></div-->
 		
+	
   </div>
 
   <script>
@@ -262,7 +316,6 @@
     const chairs = document.querySelectorAll('.chair');
     let matchedChair = null;
 
-    // Obsługa wpisywania imienia
     input.addEventListener('input', () => {
       const query = input.value.toLowerCase();
       let found = false;
@@ -287,18 +340,10 @@
       }
     });
 
-    // Obsługa kliknięcia przycisku
     showButton.addEventListener('click', () => {
       if (matchedChair) {
         matchedChair.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
-    });
-
-    // Testowa obsługa kliknięcia w krążki
-    chairs.forEach(chair => {
-      chair.addEventListener('click', () => {
-        //alert(`Kliknięto: ${chair.dataset.guest}`);
-      });
     });
   </script>
 </body>
