@@ -4,12 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Znajdź swoje miejsce</title>
-  <!-- Czcionki z Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: sans-serif;
-      background: url('tlo2.png') no-repeat center center fixed;
+      background: url('tlo3.png') no-repeat center center fixed;
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -21,17 +20,16 @@
       padding: 2rem;
     }
 
-    /* Efekt halo dla wszystkich nagłówków */
-    h1, h2, h3, h4 {
-      text-shadow:
-        0 0 5px #ffffff,
-        0 0 10px #ffffff,
-        0 0 15px #cccccc;
+    @media (max-width: 768px) {
+      body {
+        background-attachment: scroll;
+      }
     }
 
     .header {
       text-align: center;
       margin-bottom: 2rem;
+      text-shadow: 0 0 8px white; /* efekt halo */
     }
 
     .header h2 {
@@ -67,6 +65,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 2.2rem;
       color: #000000;
+      text-shadow: 0 0 6px white; /* halo efekt dla h1 */
     }
 
     input {
@@ -134,25 +133,6 @@
       border-radius: 4px;
       white-space: nowrap;
     }
-
-    /* Poprawka dla urządzeń mobilnych */
-    @media (max-width: 768px) {
-      body {
-        background-attachment: scroll;
-      }
-
-      .header h2 {
-        font-size: 3rem;
-      }
-
-      .header h3, .header h4 {
-        font-size: 1.8rem;
-      }
-
-      h1 {
-        font-size: 1.6rem;
-      }
-    }
   </style>
 </head>
 <body>
@@ -170,8 +150,6 @@
 
   <div class="image-wrapper">
     <img src="stoły3.png" alt="Układ stołów" />
-
-    <!-- stół 1 -->
     <div class="chair" style="top: 4.48%; left: 24.5%;" data-guest="Katarzyna Cholewa" data-table="1" data-seat="1"></div>
     <div class="chair" style="top: 4.48%; left: 76.68%;" data-guest="Sylwia Kuboń" data-table="1" data-seat="2"></div>
   </div>
@@ -211,6 +189,12 @@
       if (matchedChair) {
         matchedChair.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
+    });
+
+    chairs.forEach(chair => {
+      chair.addEventListener('click', () => {
+        // dodatkowa logika
+      });
     });
   </script>
 </body>
