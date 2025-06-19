@@ -6,55 +6,65 @@
   <title>Znajdź swoje miejsce</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
+    html, body {
       margin: 0;
       padding: 0;
+      min-height: 100%;
     }
 
-    html, body {
-      width: 100%;
-      height: 100%;
+    body {
       font-family: sans-serif;
-      background: url('tlo2.png') no-repeat center center fixed;
-      background-size: cover;
+      background: url('tlo.png') no-repeat center top fixed;
+      background-size: contain;
+      background-color: #000; /* czarne tło wokół zdjęcia */
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      padding: 2rem 1rem;
     }
 
-    .overlay {
-      background-color: rgba(255, 255, 255, 0.8);
-      border-radius: 20px;
-      padding: 2rem;
-      max-width: 90%;
-      width: 700px;
+    .header {
       text-align: center;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      margin-bottom: 2rem;
     }
 
     .header h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      color: #000;
+      font-size: 5rem;
+      color: #000000;
+      margin: 0;
+      text-shadow: 0 0 8px white;
     }
 
     .header h3 {
       font-family: 'Great Vibes', cursive;
-      font-size: 2rem;
+      font-size: 2.8rem;
       color: #6495ED;
+      margin: 0.5rem 0;
+      text-shadow: 0 0 6px white;
     }
 
     .header h4 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      color: #000;
+      font-size: 2.8rem;
+      color: #000000;
+      margin: 0.5rem 0;
+      text-shadow: 0 0 8px white;
+    }
+
+    .subheader {
+      font-family: 'Playfair Display', cursive;
+      font-size: 2rem;
+      color: #6a994e;
+      margin-top: 0.5rem;
     }
 
     h1 {
-      font-size: 1.5rem;
-      color: #000;
-      margin: 1rem 0;
+      margin-bottom: 1rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: #000000;
+      text-shadow: 0 0 5px white;
     }
 
     input {
@@ -66,34 +76,33 @@
     }
 
     #result {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: bold;
       margin-top: 1rem;
-      color: #333;
+      text-align: center;
+      color: #000000;
     }
 
     #show-button {
       margin-top: 0.5rem;
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 0.8rem;
       font-size: 1rem;
       cursor: pointer;
       display: none;
-      background-color: #6495ED;
-      color: white;
-      border: none;
-      border-radius: 5px;
     }
 
     .image-wrapper {
       margin-top: 2rem;
       position: relative;
       width: 100%;
+      max-width: 800px;
     }
 
     .image-wrapper img {
       max-width: 100%;
       height: auto;
       border: 1px solid #ccc;
+      display: block;
     }
 
     .chair {
@@ -104,6 +113,9 @@
       border: 1px solid #333;
       border-radius: 50%;
       cursor: pointer;
+      z-index: 2;
+      touch-action: manipulation;
+      pointer-events: auto;
     }
 
     .chair:hover::after {
@@ -115,39 +127,50 @@
       background: #333;
       color: white;
       padding: 4px 8px;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       border-radius: 4px;
       white-space: nowrap;
     }
 
-    /* Responsive text scaling */
-    @media (max-width: 600px) {
-      .header h2 { font-size: 2.2rem; }
-      .header h3 { font-size: 1.6rem; }
-      .header h4 { font-size: 1.4rem; }
-      h1 { font-size: 1.2rem; }
+    @media screen and (max-width: 768px) {
+      .header h2 {
+        font-size: 3rem;
+      }
+
+      .header h3,
+      .header h4 {
+        font-size: 2rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      input {
+        width: 90%;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <div class="header">
-      <h2>Weronika i Piotr</h2>
-      <h3>27 Czerwca 2025</h3>
-      <h4>Miłej Zabawy!</h4>
-    </div>
 
-    <h1>Znajdź swoje miejsce przy stole</h1>
-    <input type="text" id="search" placeholder="Wpisz imię i nazwisko..." />
-    <div id="result"></div>
-    <button id="show-button">Pokaż miejsce</button>
+  <div class="header">
+    <h2>Weronika i Piotr</h2>
+    <h3>27 Czerwca 2025</h3>
+    <h4>Miłej Zabawy!</h4>
+  </div>
 
-    <div class="image-wrapper">
-      <img src="stoły3.png" alt="Układ stołów" />
+  <h1>Znajdź swoje miejsce przy stole</h1>
+  <input type="text" id="search" placeholder="Wpisz imię i nazwisko..." />
+  <div id="result"></div>
+  <button id="show-button">Pokaż miejsce</button>
 
-      <div class="chair" style="top: 4.48%; left: 24.5%;" data-guest="Katarzyna Cholewa" data-table="1" data-seat="1"></div>
-      <div class="chair" style="top: 4.48%; left: 76.68%;" data-guest="Sylwia Kuboń" data-table="1" data-seat="2"></div>
-    </div>
+  <div class="image-wrapper">
+    <img src="stoły3.png" alt="Układ stołów" />
+
+    <!-- przykładowe miejsca -->
+    <div class="chair" style="top: 4.48%; left: 24.5%;" data-guest="Katarzyna Cholewa" data-table="1" data-seat="1"></div>
+    <div class="chair" style="top: 4.48%; left: 76.68%;" data-guest="Sylwia Kuboń" data-table="1" data-seat="2"></div>
   </div>
 
   <script>
@@ -187,5 +210,6 @@
       }
     });
   </script>
+
 </body>
 </html>
