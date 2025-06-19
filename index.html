@@ -9,12 +9,24 @@
   <style>
     body {
       font-family: sans-serif;
-      background: url('tlo2.png') no-repeat center center fixed;
-      background-size: cover;
+      background: url('tlo.png') no-repeat center center fixed;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: #ffffff;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 2rem;
+    }
+
+    /* Efekt halo dla wszystkich nagłówków */
+    h1, h2, h3, h4 {
+      text-shadow:
+        0 0 5px #ffffff,
+        0 0 10px #ffffff,
+        0 0 15px #cccccc;
     }
 
     .header {
@@ -27,7 +39,6 @@
       font-size: 5rem;
       color: #000000;
       margin: 0;
-      text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
     }
 
     .header h3 {
@@ -35,7 +46,6 @@
       font-size: 2.8rem;
       color: #6495ED;
       margin: 0.5rem 0;
-      text-shadow: 0 0 8px #ffffff, 0 0 12px #6495ED;
     }
 
     .header h4 {
@@ -43,7 +53,6 @@
       font-size: 2.8rem;
       color: #000000;
       margin: 0.5rem 0;
-      text-shadow: 0 0 10px #ffffff;
     }
 
     .subheader {
@@ -51,7 +60,6 @@
       font-size: 2rem;
       color: #6a994e;
       margin-top: 0.5rem;
-      text-shadow: 0 0 6px #ffffff;
     }
 
     h1 {
@@ -59,7 +67,6 @@
       font-family: 'Playfair Display', serif;
       font-size: 2.2rem;
       color: #000000;
-      text-shadow: 0 0 8px #ffffff;
     }
 
     input {
@@ -73,8 +80,6 @@
       font-size: 1.2rem;
       font-weight: bold;
       margin-top: 1rem;
-      color: #000000;
-      text-shadow: 0 0 6px #ffffff;
     }
 
     #show-button {
@@ -128,6 +133,25 @@
       font-size: 0.9rem;
       border-radius: 4px;
       white-space: nowrap;
+    }
+
+    /* Poprawka dla urządzeń mobilnych */
+    @media (max-width: 768px) {
+      body {
+        background-attachment: scroll;
+      }
+
+      .header h2 {
+        font-size: 3rem;
+      }
+
+      .header h3, .header h4 {
+        font-size: 1.8rem;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
     }
   </style>
 </head>
@@ -187,12 +211,6 @@
       if (matchedChair) {
         matchedChair.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
-    });
-
-    chairs.forEach(chair => {
-      chair.addEventListener('click', () => {
-        // Możesz dodać dodatkową logikę przy kliknięciu
-      });
     });
   </script>
 </body>
