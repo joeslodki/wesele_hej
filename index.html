@@ -13,24 +13,31 @@
     }
 
     body {
-	  font-family: sans-serif;
-	  background: url('tlo7.webp') no-repeat center top fixed;
-	  background-size: cover;
-	  background-color: #000;
-	  display: flex;
-	  flex-direction: column;
-	  align-items: center;
-	  padding: 2rem 1rem;
-	  min-height: 100vh;
-	}
+		  font-family: sans-serif;
+		  background-color: #000;
+		  display: flex;
+		  flex-direction: column;
+		  align-items: center;
+		  padding: 2rem 1rem;
+		  min-height: 100vh;
+		}
 
-	/* Tło desktopowe (16:9) dla szerokich ekranów */
-	@media screen and (min-width: 1024px) {
-	  body {
-		background: url('tlo6.webp') no-repeat center top fixed;
-		background-size: cover;
-	  }
-	}
+		/* Desktop */
+		@media screen and (min-width: 768px) {
+		  body {
+			background: url('tlo6.webp') no-repeat top center fixed;
+			background-size: cover;
+		  }
+		}
+
+		/* Mobile */
+		@media screen and (max-width: 767px) {
+		  body {
+			background: url('tlo7.webp') no-repeat top center scroll;
+			background-size: cover;
+		  }
+		}
+
 	
 	
 
