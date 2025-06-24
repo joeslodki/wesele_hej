@@ -15,8 +15,9 @@
     body {
 	  font-family: sans-serif;
 	  background: url('tlo7.webp') no-repeat center top;
-	  background-size: contain;
-	  background-color: #000;
+	  background-size: contain;           /* przykrywa całą szerokość i wysokość ekranu */
+	  background-attachment: fixed;     /* obraz jest statyczny podczas przewijania */
+	  background-color: #000;           /* czarne tło wokół (gdyby obraz był mniejszy) */
 	  margin: 0;
 	  padding: 2rem 1rem;
 	  display: flex;
@@ -24,6 +25,7 @@
 	  align-items: center;
 	  min-height: 100vh;
 	}
+
 
 
 	
