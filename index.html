@@ -13,18 +13,24 @@
     }
 
     body {
-      font-family: sans-serif;
-	  background: url('tlo5.webp') no-repeat center top fixed;
-	  background-size: cover;           /* teraz przykryje całe tło */
-	  background-color: #000;           /* czarne tło wokół zdjęcia */
+	  font-family: sans-serif;
+	  background: url('tlo7.webp') no-repeat center top fixed;
+	  background-size: cover;
+	  background-color: #000;
 	  display: flex;
 	  flex-direction: column;
 	  align-items: center;
 	  padding: 2rem 1rem;
-
-	  /* opcjonalne: minimalna wysokość aby „dać oddech” */
 	  min-height: 100vh;
-    }
+	}
+
+	/* Tło desktopowe (16:9) dla szerokich ekranów */
+	@media screen and (min-width: 1024px) {
+	  body {
+		background: url('tlo6.webp') no-repeat center top fixed;
+		background-size: cover;
+	  }
+	}
 	
 	
 
